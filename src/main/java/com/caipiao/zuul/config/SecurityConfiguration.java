@@ -108,7 +108,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             @Override
             protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                             FilterChain filterChain) throws ServletException, IOException {
-                CsrfToken csrf = (CsrfToken) request.getAttribute(CsrfToken.class.getName());
+            	CsrfToken csrf = (CsrfToken) request.getAttribute(CsrfToken.class.getName());
                 if (csrf != null) {
                     Cookie cookie = new Cookie(CSRF_COOKIE_NAME, csrf.getToken());
                     cookie.setPath("/");
